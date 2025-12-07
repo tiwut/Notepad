@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Notepad - A Modern Text Editor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: #282c34;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 5px solid #61afef;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        section {
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        h2 {
+            color: #282c34;
+            border-bottom: 2px solid #61afef;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        .code-block {
+            background-color: #e8e8e8;
+            border: 1px solid #ccc;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            color: #3e4451;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            background: #ffffff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-left: 4px solid #abb2bf;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+            color: #a0a0a0;
+            font-size: 0.9em;
+        }
+        a {
+            color: #61afef;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script data-goatcounter="https://tiwut.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script src="https://tiwut.de/cookie.notice.js"></script>
+    <script src="https://tiwut.de/Script/enforce_https.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Python Notepad</h1>
+        <p>A Modern Text Editor Built with Tkinter</p>
+    </header>
+
+    <div class="container">
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>The **Python Notepad** is a professional, modern text editor application developed using the **Tkinter** library. It aims to provide a clean, dark-themed interface with essential features expected from a contemporary editor, such as line numbers and a dynamic status bar.</p>
+            <p>The entire application is encapsulated within the `TextEditor` class, which handles the GUI setup, core text editing functionality, and file operations.</p>
+        </section>
+
+        <section id="features">
+            <h2>Key Features</h2>
+            <ul class="feature-list">
+                <li>**Dark Theme:** Utilizes a professional, eye-friendly color scheme (`#282c34` background, `#abb2bf` foreground).</li>
+                <li>**Line Numbers:** A dedicated widget on the left side displays the line numbers, synchronized with the main text area scroll.</li>
+                <li>**ScrolledText Area:** The main text editor uses `tkinter.scrolledtext.ScrolledText` for built-in scrollbar support.</li>
+                <li>**Status Bar:** A dynamic status bar at the bottom displays the current cursor position (Line, Column) and an overall "Ready" status.</li>
+                <li>**File Management:** Full support for New (`Ctrl+N`), Open (`Ctrl+O`), Save (`Ctrl+S`), and Save As (`Ctrl+Shift+S`) operations.</li>
+                <li>**Unsaved Changes Prompt:** Prompts the user to save changes upon closing or opening a new file if the content is modified.</li>
+                <li>**Undo/Redo:** Built-in support for undo (`Ctrl+Z`) and redo (`Ctrl+Y`) functionality.</li>
+            </ul>
+        </section>
+
+        <section id="running-the-code">
+            <h2>How to Run</h2>
+            <p>This application is written in Python and uses the standard library `tkinter`, so no external installations are necessary beyond a Python environment.</p>
+            <p>Save the code as a Python file (e.g., `main_editor.py`) and run it from your terminal:</p>
+            <div class="code-block">
+                python main_editor.py
+            </div>
+        </section>
+
+        <section id="color-scheme">
+            <h2>Color Scheme Details</h2>
+            <p>The application uses a consistent set of dark mode colors:</p>
+            <ul>
+                <li>**Editor Background:** `#282c34`</li>
+                <li>**Editor Foreground (Text):** `#abb2bf`</li>
+                <li>**Line Number Background:** `#3e4451`</li>
+                <li>**Line Number Foreground:** `#61afef` (used for the numbers)</li>
+                <li>**Status Bar Background:** `#3e4451`</li>
+            </ul>
+        </section>
+        
+        <section id="code-snippet">
+            <h2>Core Class Initialization</h2>
+            <p>The editor's initialization sets up the main window, colors, frame, and text widgets:</p>
+            <div class="code-block">
+                class TextEditor:
+                    def __init__(self, master):
+                        # ... initialization and color definitions ...
+
+                        self.text_frame = tk.Frame(self.master, bg=self.EDITOR_BG)
+                        self.text_frame.pack(expand=True, fill='both')
+
+                        self.linenumbers = tk.Text(
+                            # ... linenumbers configuration ...
+                        )
+                        self.linenumbers.pack(side=tk.LEFT, fill=tk.Y)
+                        
+                        self.text_area = scrolledtext.ScrolledText(
+                            # ... text_area configuration ...
+                        )
+                        self.text_area.pack(side=tk.RIGHT, expand=True, fill='both')
+                        
+                        self._create_menu_bar()
+                        self._create_status_bar()
+                        # ... bindings and updates ...
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <a href="https://tiwut.de/cookie-banner-information.html" style="color: #a0a0a0; text-decoration: none; font-size: 0.8rem;">Legal Notice</a> | &copy; 2025 Tiwut
+    </footer>
+
+</body>
+</html>
