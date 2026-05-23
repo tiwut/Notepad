@@ -1,0 +1,5 @@
+/home/tiwut/Downloads/build/CMakeFiles/CodePad.dir
+/home/tiwut/Downloads/build/CMakeFiles/edit_cache.dir
+/home/tiwut/Downloads/build/CMakeFiles/rebuild_cache.dir
+/home/tiwut/Downloads/build/CMakeFiles/CodePad_autogen_timestamp_deps.dir
+/home/tiwut/Downloads/build/CMakeFiles/CodePad_autogen.dir
