@@ -2,7 +2,7 @@
 
 CodePad is a high-performance, cross-platform code and text editor built with C++ and the Qt framework. Designed for developers, it upgrades standard notepad applications by providing a rich, multi-tabbed interface with an optimized syntax highlighting engine and a sleek "One Dark" theme out of the box.
 
-[Screenshot](Screenshot.png)
+<img width="1122" height="810" alt="Screenshot" src="https://github.com/user-attachments/assets/eb2e9778-d1f2-4a74-b5c1-0ea481ed84ae" />
 
 ## 40 Advanced Features Included
 
